@@ -45,12 +45,12 @@ Return your findings as a short summary with bullet points.""",
             "previous_findings": previous
         }
 
-        # Use the LLM with internet access
-        chain_of_thought = self.llm(self.prompt.format(**chain_input), use_internet=True)
+        # Use the LLM
+        chain_of_thought = self.llm(self.prompt.format(**chain_input))
         
-        # Store results with enhanced findings
+        # Store results
         state.research_results["current"] = {
-            "timestamp": "2025-01-22",  # Updated date
+            "timestamp": "2025-01-14",  # Example date
             "findings": chain_of_thought.content
         }
 

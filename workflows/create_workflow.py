@@ -39,13 +39,14 @@ def create_agent_workflow(llm):
     workflow.add_node(writer.name, writer)
     workflow.add_node(human_approval.name, human_approval)
 
-    # Define edges with enhanced orchestration
+    # Define edges
     workflow.add_edge("tool_explorer", "researcher")
     workflow.add_edge("researcher", "reasoning_agent")
     workflow.add_edge("reasoning_agent", "tool_creator")
-    workflow.add_edge("tool_creator", human_approval.name)  # Route to human approval
-    workflow.add_edge(human_approval.name, "tool_creator")  # Loop back if modified
-    workflow.add_edge(human_approval.name, "analyzer")      # Proceed to analyzer
+    # After tool creation, we can route to human approval if code not approved
+    workflow.add_edge("tool_creator", human_approval.name)
+    workflow.add_edge(human_approval.name, "tool_creator")  # loop back if modified
+    workflow.add_edge(human_approval.name, "analyzer")      # or proceed to analyzer
     workflow.add_edge("analyzer", "writer")
     workflow.add_edge("writer", END)
 
