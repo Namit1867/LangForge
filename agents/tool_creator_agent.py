@@ -44,8 +44,8 @@ Output only the code, no extra commentary.
             tools=tools_desc
         )
 
-        # Send to the LLM for code generation
-        response = self.llm(prompt_text)
+        # Send to the LLM for code generation with LangChain compatibility
+        response = self.llm(prompt_text, ensure_langchain_compatibility=True)
         code_snippet = response.content
 
         # The user might want JSON or direct code. For now, store as string:
