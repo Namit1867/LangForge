@@ -177,7 +177,7 @@ This project is licensed under the **MIT License**.
 
 👤 **Author**: Namit Jain  
 📧 **Email**: [namit.cs.rdjps@gmail.com](mailto:namit.cs.rdjps@gmail.com)  
-🔗 **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/namit-jain-355367186/)
+🔗 **LinkedIn**: [https://www.linkedin.com/in/namit-jain-355367186/](https://www.linkedin.com/in/namit-jain-355367186/)
 
 ---
 
